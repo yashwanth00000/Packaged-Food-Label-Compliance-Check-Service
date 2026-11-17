@@ -184,3 +184,9 @@ The included regulation text files are sample extracts, not a complete authorita
 ## Regulatory corpus status
 
 The files currently shipped under `data/regulations/` are **sample/demo extracts**, not a complete or authoritative FSSAI corpus. See `data/regulations/REGULATORY_SOURCE_MANIFEST.md` for the official source index and amendment review notes. With the default production safety setting (`REGULATORY_REQUIRE_AUTHORITATIVE_CORPUS=true`), the decision engine refuses to issue `CLEAR_FOR_PRINT` when authoritative evidence is missing. Download, version, validate and ingest the applicable official FSSAI/Gazette instruments before using the service for a real label review. Future-effective amendments must not be applied before their commencement date. All outputs remain advisory and require qualified human review.
+
+## Team Contributions
+
+- **Yashwanth Gowda T G**
+- **Shreyan Ganesh**
+- **Krishna Koushik**
