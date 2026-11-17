@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Error — FSSAI Compliance Checker{% endblock %}
+
+{% block content %}
+<div class="card" style="text-align: center; padding: 3rem;">
+    <h1 style="font-size: 2rem; margin-bottom: 1rem;">⚠️ Error</h1>
+    <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">{{ error }}</p>
+    <a href="/" class="btn btn-primary">← Back to Home</a>
+</div>
+{% endblock %}
