@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  compliance_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fssai-compliance:latest
+    container_name: fssai_compliance
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=production
+      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost:8000}
+      - REGULATORY_REQUIRE_AUTHORITATIVE_CORPUS=true
+      - APP_LOG_LEVEL=INFO
+      - APP_DEBUG=false
+      - LLM_PROVIDER=${LLM_PROVIDER:-gemini}
+      - VISION_PROVIDER=${VISION_PROVIDER:-gemini}
+      - UPLOAD_RETENTION_DAYS=7
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - OPENAI_API_BASE=${OPENAI_API_BASE:-}
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o-mini}
+      - OPENAI_VISION_MODEL=${OPENAI_VISION_MODEL:-gpt-4o-mini}
+      - REGULATORY_AUTHORIZED_SHA256_JSON=${REGULATORY_AUTHORIZED_SHA256_JSON:-}
+      - LLM_MOCK_FALLBACK=false
+      - DATABASE_URL=sqlite+aiosqlite:////app/data/db/compliance.db
+      - CHROMA_PERSIST_DIR=/app/data/vectorstore
+      - EMBEDDING_PROVIDER=hash
+    command: >
+      sh -c "mkdir -p /app/data/db /app/data/vectorstore /app/data/uploads && python scripts/ingest_regulations.py --mock-embeddings && exec python -m uvicorn app.main:create_app --factory --host 0.0.0.0 --port 8000"
+    volumes:
+      - compliance_db:/app/data/db
+      - compliance_vectorstore:/app/data/vectorstore
+      - compliance_uploads:/app/data/uploads
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  compliance_db:
+  compliance_vectorstore:
+  compliance_uploads:
