@@ -1,0 +1,69 @@
+==============================================================================
+SAMPLE REGULATORY TEXT — Food Safety and Standards (Advertising and Claims)
+Regulations, 2018
+==============================================================================
+*** THIS IS A PLACEHOLDER / SAMPLE FILE ***
+*** It contains representative excerpts for demonstration and testing. ***
+*** It does NOT contain the full, official FSSAI regulation text. ***
+*** Replace with the actual gazette notification for production use. ***
+==============================================================================
+
+REGULATION: [SAMPLE] Food Safety and Standards (Advertising and Claims) Regulations, 2018
+SOURCE: FSSAI Gazette Notification
+VERSION: 2018 (as amended)
+
+--- CHAPTER 1: GENERAL ---
+
+CLAUSE 1: Short Title and Commencement
+These regulations may be called the Food Safety and Standards (Advertising and Claims) Regulations, 2018.
+
+CLAUSE 2: Definitions
+(a) "Claim" means any representation which states, suggests, or implies that a food has particular qualities relating to its origin, nutritional properties, nature, processing, composition or any other quality;
+(b) "Nutrition claim" means any representation which states, suggests or implies that a food has particular nutritional properties;
+(c) "Health claim" means any representation that states, suggests, or implies that a relationship exists between a food or a constituent of that food and health.
+
+--- CHAPTER 2: GENERAL PRINCIPLES ---
+
+CLAUSE 3: General Conditions for Claims
+(a) Claims shall be truthful, unambiguous, meaningful, and not misleading;
+(b) Claims shall be substantiated by scientific evidence;
+(c) Claims shall not imply that a balanced diet of ordinary foods cannot supply adequate amounts of nutrients;
+(d) No claim shall be made which could give rise to doubt about the safety of similar foods;
+(e) Claims shall not encourage or condone excess consumption of a particular food.
+
+CLAUSE 4: Prohibited Claims
+The following claims shall NOT be permitted on food labels or advertisements:
+(a) Claims that a food can prevent, treat, cure, or mitigate any disease, disorder, or medical condition — including but not limited to "cures cold and flu", "prevents cancer", "treats diabetes", "lowers blood pressure";
+(b) Claims referring to recommendations by individual doctors or health professionals;
+(c) Claims that a food is "clinically proven" unless supported by adequate and sufficient peer-reviewed clinical trials;
+(d) Claims implying that health could be affected by NOT consuming a food;
+(e) Claims that are misleading about the nutritional value of the food.
+
+--- CHAPTER 3: NUTRITION CLAIMS ---
+
+CLAUSE 5: Conditions for Nutrition Claims
+Nutrition claims shall only be made where the food meets the specified conditions:
+(a) "High protein" or "Rich in protein": The food shall contain not less than 20% of the energy from protein, or not less than 10 g of protein per serving, whichever is lower;
+(b) "Source of protein" or "Contains protein": The food shall contain not less than 10% of the energy from protein, or not less than 5 g of protein per serving, whichever is lower;
+(c) "Low fat": The food shall contain not more than 3 g of fat per 100 g (solids) or 1.5 g per 100 ml (liquids);
+(d) "Fat free": The food shall contain not more than 0.5 g of fat per 100 g or 100 ml;
+(e) "Low sugar": The food shall contain not more than 5 g of sugars per 100 g (solids) or 2.5 g per 100 ml (liquids);
+(f) "No added sugar" or "Without added sugar": No sugars of any type shall have been added during processing. If the food naturally contains sugars, the label shall also state "CONTAINS NATURALLY OCCURRING SUGARS";
+(g) "Source of fibre": The food shall contain not less than 3 g of fibre per 100 g or not less than 1.5 g of fibre per 100 kcal;
+(h) "High fibre" or "Rich in fibre": The food shall contain not less than 6 g of fibre per 100 g or not less than 3 g of fibre per 100 kcal;
+(i) "Low sodium" or "Low salt": The food shall contain not more than 120 mg of sodium per 100 g.
+
+CLAUSE 6: "100% Natural" Claims
+A food bearing the claim "natural" or "100% natural" shall not contain any added colour, flavour (other than natural flavourings), or any other synthetic additive. All ingredients must be of natural origin and minimally processed. The use of synthetic preservatives, emulsifiers, or artificial sweeteners shall disqualify the claim.
+
+CLAUSE 7: "Immunity" and Health-Related Claims
+Claims such as "immunity booster", "boosts immunity", or "enhances immune function" are classified as health claims and shall only be permitted when:
+(a) The food contains specific nutrients or ingredients with established scientific evidence of immune-supporting properties;
+(b) The claim is qualified (e.g., "Vitamin C contributes to the normal function of the immune system");
+(c) The claim does not imply prevention or treatment of disease.
+Unqualified immunity claims on foods without established scientific evidence are NOT permitted.
+
+--- CHAPTER 4: ENFORCEMENT ---
+
+CLAUSE 8: Compliance and Penalties
+Non-compliance with these regulations may result in penalties under the Food Safety and Standards Act, 2006. Food business operators are required to ensure that all claims on labels and in advertisements comply with these regulations.

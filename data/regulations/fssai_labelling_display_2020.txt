@@ -1,0 +1,91 @@
+==============================================================================
+SAMPLE REGULATORY TEXT — Food Safety and Standards (Labelling and Display)
+Regulations, 2020
+==============================================================================
+*** THIS IS A PLACEHOLDER / SAMPLE FILE ***
+*** It contains representative excerpts for demonstration and testing. ***
+*** It does NOT contain the full, official FSSAI regulation text. ***
+*** Replace with the actual gazette notification for production use. ***
+==============================================================================
+
+REGULATION: [SAMPLE] Food Safety and Standards (Labelling and Display) Regulations, 2020
+SOURCE: FSSAI Gazette Notification
+VERSION: 2020 (as amended)
+
+--- CHAPTER 1: GENERAL ---
+
+CLAUSE 1: Short Title and Commencement
+These regulations may be called the Food Safety and Standards (Labelling and Display) Regulations, 2020. They shall come into force on the date of their publication in the Official Gazette.
+
+CLAUSE 2: Definitions
+In these regulations, unless the context otherwise requires:
+(a) "Label" means any tag, brand, mark, pictorial or other descriptive matter, written, printed, stencilled, marked, embossed or impressed on, or attached to, a container of food;
+(b) "Pre-packaged food" means food which is placed in a package of any nature before being offered for sale;
+(c) "Principal display panel" means the part of a label that is most likely to be displayed, presented, shown or examined under customary conditions of display for retail sale.
+
+--- CHAPTER 2: MANDATORY LABELLING REQUIREMENTS ---
+
+CLAUSE 3: General Requirements for Pre-packaged Foods
+Every pre-packaged food shall carry the following information on the label:
+(a) The name of the food;
+(b) List of ingredients;
+(c) Nutritional information;
+(d) Declaration regarding food additives;
+(e) Name and complete address of the manufacturer or packer or importer;
+(f) Net quantity;
+(g) Lot number or batch number or code number;
+(h) Date of manufacture or packing;
+(i) Best before or use by date or expiry date;
+(j) Country of origin for imported food;
+(k) Instructions for use, including reconstitution where applicable.
+
+CLAUSE 4: Name of Food
+The name of the food shall indicate the true nature of the food. The name of the food shall be specific and not generic. Trade names or brand names shall not replace the common or usual name of the food.
+
+CLAUSE 5: List of Ingredients
+The list of ingredients shall be headed by an appropriate title which includes the word 'ingredient'. All ingredients shall be listed in descending order of their composition by weight or volume at the time of manufacture. Where an ingredient is itself the product of two or more ingredients, such a compound ingredient may be declared in the list of ingredients by its common name followed by a list of its ingredients in brackets in descending order of composition.
+
+CLAUSE 6: Allergen Declaration
+The label shall declare the presence of the following allergens or their products: cereals containing gluten (wheat, rye, barley, oats, spelt or their hybridised strains), crustaceans, eggs, fish, peanuts, soybeans, milk, tree nuts (almonds, cashews, walnuts, pecans, pistachios, Brazil nuts, hazelnuts, macadamia nuts), sulphur dioxide and sulphites at concentrations of 10 mg/kg or more. The allergen declaration shall be in a contrasting colour on the label and shall begin with the word "Contains" followed by the names of allergens.
+
+CLAUSE 7: Net Quantity
+The net quantity of the food shall be declared in metric units. For liquid foods, the net quantity shall be by volume. For solid foods, the net quantity shall be by weight. For semi-solid or viscous foods, the net quantity shall be by weight or volume.
+
+CLAUSE 8: Vegetarian / Non-Vegetarian Mark
+Every package of food shall bear on the label an appropriate mark — a green circle in a green square for vegetarian food, or a brown/red circle in a brown/red square for non-vegetarian food. The mark shall be displayed prominently on the principal display panel.
+
+CLAUSE 9: FSSAI Logo and Licence Number
+Every pre-packaged food shall bear on the label the FSSAI logo and the licence number granted to the food business operator. The FSSAI licence number shall be displayed prominently.
+
+CLAUSE 10: Date Marking
+Every pre-packaged food shall declare either the date of manufacture and best before date, or the date of manufacture and expiry date. The date of manufacture is mandatory. The best before date or expiry date indicates the date until which the food retains its specific quality attributes when stored under the conditions specified on the label.
+
+CLAUSE 11: Nutritional Information
+Every pre-packaged food shall declare on the label the following nutritional information per 100g or 100ml and per serve:
+(a) Energy (kcal);
+(b) Protein (g);
+(c) Carbohydrate (g);
+(d) Total Sugars (g);
+(e) Added Sugars (g);
+(f) Total Fat (g);
+(g) Saturated Fat (g);
+(h) Trans Fat (g);
+(i) Sodium (mg).
+The serving size shall also be declared.
+
+CLAUSE 12: Manufacturer / Packer Details
+The name and complete address of the manufacturer or packer shall be declared on every label. For imported food, the name and address of the importer shall also be declared.
+
+CLAUSE 13: Storage Instructions
+Where the quality of food is affected by storage conditions, storage instructions shall be declared on the label.
+
+CLAUSE 14: Country of Origin
+For imported food, the country of origin of the food shall be declared.
+
+--- CHAPTER 3: ADDITIONAL REQUIREMENTS ---
+
+CLAUSE 15: Batch / Lot Identification
+Every pre-packaged food shall bear on the label a batch or lot number or code to enable traceability.
+
+CLAUSE 16: Instructions for Use
+Instructions for use, including reconstitution, cooking, or storage after opening, shall be given where applicable.

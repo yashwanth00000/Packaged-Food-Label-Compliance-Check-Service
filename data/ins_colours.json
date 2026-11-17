@@ -1,0 +1,128 @@
+{
+  "description": "FSSAI Permitted and Prohibited Colours in Foods (Schedule II)",
+  "source": "Food Safety and Standards (Food Products Standards and Food Additives) Regulations",
+  "permitted_colours": [
+    {
+      "ins_number": "INS 100(i)",
+      "common_name": "Curcumin",
+      "type": "natural",
+      "status": "permitted"
+    },
+    {
+      "ins_number": "INS 101(i)",
+      "common_name": "Riboflavin",
+      "type": "natural",
+      "status": "permitted"
+    },
+    {
+      "ins_number": "INS 110",
+      "common_name": "Sunset Yellow FCF",
+      "type": "synthetic",
+      "status": "permitted"
+    },
+    {
+      "ins_number": "INS 120",
+      "common_name": "Cochineal / Carminic Acid",
+      "type": "natural",
+      "status": "permitted"
+    },
+    {
+      "ins_number": "INS 122",
+      "common_name": "Carmoisine / Azorubine",
+      "type": "synthetic",
+      "status": "permitted"
+    },
+    {
+      "ins_number": "INS 124",
+      "common_name": "Ponceau 4R",
+      "type": "synthetic",
+      "status": "permitted"
+    },
+    {
+      "ins_number": "INS 127",
+      "common_name": "Erythrosine",
+      "type": "synthetic",
+      "status": "permitted"
+    },
+    {
+      "ins_number": "INS 132",
+      "common_name": "Indigo Carmine",
+      "type": "synthetic",
+      "status": "permitted"
+    },
+    {
+      "ins_number": "INS 133",
+      "common_name": "Brilliant Blue FCF",
+      "type": "synthetic",
+      "status": "permitted"
+    },
+    {
+      "ins_number": "INS 140",
+      "common_name": "Chlorophylls",
+      "type": "natural",
+      "status": "permitted"
+    },
+    {
+      "ins_number": "INS 150a",
+      "common_name": "Caramel I (Plain Caramel)",
+      "type": "natural",
+      "status": "permitted"
+    },
+    {
+      "ins_number": "INS 150d",
+      "common_name": "Caramel IV (Sulphite Ammonia Caramel)",
+      "type": "colour",
+      "status": "permitted"
+    },
+    {
+      "ins_number": "INS 160a(ii)",
+      "common_name": "Beta-Carotene (Vegetable)",
+      "type": "natural",
+      "status": "permitted"
+    },
+    {
+      "ins_number": "INS 160b",
+      "common_name": "Annatto Extracts",
+      "type": "natural",
+      "status": "permitted"
+    }
+  ],
+  "prohibited_colours": [
+    {
+      "name": "Rhodamine B",
+      "reason": "Non-permitted industrial dye, toxic and carcinogenic",
+      "severity": "CRITICAL"
+    },
+    {
+      "name": "Metanil Yellow",
+      "reason": "Prohibited non-permitted industrial azo dye",
+      "severity": "CRITICAL"
+    },
+    {
+      "name": "Sudan Dyes",
+      "synonyms": ["Sudan I", "Sudan II", "Sudan III", "Sudan IV"],
+      "reason": "Prohibited toxic and carcinogenic industrial dye",
+      "severity": "CRITICAL"
+    },
+    {
+      "name": "Lead Chromate",
+      "reason": "Prohibited toxic heavy metal compound used as turmeric adulterant",
+      "severity": "CRITICAL"
+    },
+    {
+      "name": "Copper Sulphate",
+      "reason": "Prohibited toxic mineral salt used for artificial greening",
+      "severity": "CRITICAL"
+    },
+    {
+      "name": "Malachite Green",
+      "reason": "Prohibited toxic industrial dye used on green vegetables and fish",
+      "severity": "CRITICAL"
+    },
+    {
+      "name": "Auramine",
+      "reason": "Prohibited diarylmethane dye",
+      "severity": "CRITICAL"
+    }
+  ]
+}

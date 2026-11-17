@@ -1,0 +1,75 @@
+==============================================================================
+SAMPLE REGULATORY TEXT — Food Safety and Standards (Food Products Standards
+and Food Additives) Regulations
+==============================================================================
+*** THIS IS A PLACEHOLDER / SAMPLE FILE ***
+*** It contains representative excerpts for demonstration and testing. ***
+*** It does NOT contain the full, official FSSAI regulation text. ***
+*** Replace with the actual gazette notification for production use. ***
+==============================================================================
+
+REGULATION: [SAMPLE] Food Safety and Standards (Food Products Standards and Food Additives) Regulations
+SOURCE: FSSAI
+VERSION: As amended
+
+--- CHAPTER: FOOD ADDITIVES ---
+
+CLAUSE 1: General Provisions
+Food additives shall be used only in accordance with these regulations. Only additives that are listed in the schedules to these regulations shall be permitted. The use of food additives shall be justified by a technological need and shall not mislead the consumer.
+
+CLAUSE 2: Permitted Food Additives
+The following food additives are permitted for use in food products subject to the conditions specified:
+
+INS 100(i) - Curcumin - Colour - Permitted in various food categories
+INS 110 - Sunset Yellow FCF - Synthetic Colour - Permitted with limits in specified categories
+INS 120 - Cochineal / Carminic Acid - Colour - Natural colouring
+INS 150a - Caramel I (Plain Caramel) - Colour - GMP
+INS 160b - Annatto Extracts - Colour - Permitted in specified categories
+INS 200 - Sorbic Acid - Preservative - Maximum 1000 mg/kg in specified categories
+INS 202 - Potassium Sorbate - Preservative - Maximum 1000 mg/kg
+INS 210 - Benzoic Acid - Preservative - Maximum 250 mg/kg in beverages
+INS 211 - Sodium Benzoate - Preservative - Maximum 250 mg/kg in beverages
+INS 223 - Sodium Metabisulphite - Preservative/Antioxidant - Maximum levels vary
+INS 300 - Ascorbic Acid (Vitamin C) - Antioxidant - GMP
+INS 322(i) - Lecithin - Emulsifier - GMP
+INS 330 - Citric Acid - Acidity Regulator - GMP
+INS 415 - Xanthan Gum - Thickener/Stabiliser - GMP
+INS 440 - Pectins - Gelling Agent - GMP
+INS 500(ii) - Sodium Hydrogen Carbonate (Baking Soda) - Raising Agent - GMP
+INS 503(ii) - Ammonium Hydrogen Carbonate - Raising Agent - GMP
+INS 621 - Monosodium Glutamate (MSG) - Flavour Enhancer - Maximum 10 g/kg
+INS 951 - Aspartame - Artificial Sweetener - Maximum levels in specified categories
+INS 955 - Sucralose - Artificial Sweetener - Maximum levels in specified categories
+INS 960 - Steviol Glycosides - Sweetener (Natural) - Maximum levels vary
+
+CLAUSE 3: Additives Declaration
+All food additives used shall be declared in the list of ingredients. Each additive shall be declared by its functional class name followed by the specific name or INS number. For example: "Emulsifier (INS 322(i))" or "Preservative (Sodium Benzoate)".
+
+CLAUSE 4: Prohibited Additives
+The following additives are NOT permitted in food in India:
+(a) Rhodamine B
+(b) Metanil Yellow
+(c) Sudan dyes (I, II, III, IV)
+(d) Lead Chromate
+(e) Copper Sulphate (as colourant)
+Any food containing prohibited additives shall be deemed unsafe.
+
+--- CHAPTER: ALLERGEN MANAGEMENT ---
+
+CLAUSE 5: Allergen Declaration Requirements
+All foods containing the following allergens or their derivatives must declare them prominently:
+(a) Cereals containing gluten (wheat, rye, barley, oats, spelt)
+(b) Crustaceans and products thereof
+(c) Eggs and egg products
+(d) Fish and fish products
+(e) Peanuts and peanut products
+(f) Soybeans and soybean products
+(g) Milk and milk products (including lactose)
+(h) Tree nuts: almonds, cashew nuts, walnuts, pecan nuts, Brazil nuts, pistachio nuts, macadamia nuts, hazelnuts
+(i) Sulphur dioxide and sulphites (≥10 mg/kg)
+
+CLAUSE 6: Allergen-Ingredient Consistency
+The allergen declaration must be consistent with the ingredients list. If an ingredient is a known allergen or derivative thereof, it MUST appear in the allergen declaration. Failure to declare a known allergen present in the ingredients list constitutes a serious non-compliance.
+
+CLAUSE 7: Cross-Contamination Warnings
+Where cross-contamination with allergens is possible during manufacturing, precautionary statements such as "May contain traces of [allergen]" should be included. These statements shall not be used as a substitute for good manufacturing practices.

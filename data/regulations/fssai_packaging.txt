@@ -1,0 +1,28 @@
+==============================================================================
+SAMPLE REGULATORY TEXT — Food Safety and Standards (Packaging) Regulations
+==============================================================================
+*** THIS IS A PLACEHOLDER / SAMPLE FILE ***
+*** It contains representative excerpts for demonstration and testing. ***
+*** It does NOT contain the full, official FSSAI regulation text. ***
+*** Replace with the actual gazette notification for production use. ***
+==============================================================================
+
+REGULATION: [SAMPLE] Food Safety and Standards (Packaging) Regulations
+SOURCE: FSSAI
+VERSION: As amended
+
+--- CHAPTER 1: PACKAGING REQUIREMENTS ---
+
+CLAUSE 1: General
+All packaging materials used for food products shall be of food grade quality and shall not interact with the food in a manner that could affect the quality or safety of the food.
+
+CLAUSE 2: Label Size and Legibility
+The label shall be of sufficient size to accommodate all mandatory information legibly. The text on the label shall be clear, prominent, indelible and readily legible by the consumer under normal conditions of purchase and use. The minimum font size shall be 1 mm for packages with a total surface area up to 100 sq cm, and 2 mm for packages with a larger surface area.
+
+CLAUSE 3: Principal Display Panel
+The principal display panel shall contain:
+(a) The name of the food
+(b) The veg/non-veg mark
+(c) Net quantity
+(d) FSSAI logo and licence number
+These elements must be prominently displayed and clearly visible.

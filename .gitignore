@@ -1,8 +1,10 @@
 .env
+*.env
 .venv/
 venv/
 __pycache__/
 *.py[cod]
+*$py.class
 .pytest_cache/
 .ruff_cache/
 .coverage
@@ -12,3 +14,4 @@ data/uploads/*
 data/db/
 data/vectorstore/
 *.log
+.DS_Store
