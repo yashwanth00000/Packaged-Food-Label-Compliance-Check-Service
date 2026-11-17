@@ -1,0 +1,61 @@
+# =============================================================================
+# Decision Policy Configuration
+# The Decision Agent uses these rules deterministically — no LLM guesswork.
+# =============================================================================
+
+decision_policy:
+  # --- CLEAR_FOR_PRINT ---
+  # ALL conditions must be met:
+  clear_for_print:
+    no_critical_findings: true
+    no_major_findings: true
+    no_missing_mandatory_fields: true
+    all_claims_supported: true
+    min_overall_confidence: 0.80
+    all_findings_verified_by_critic: true
+    user_confirmed_required: true
+    no_unconfirmed_low_confidence_fields: true
+    min_extraction_confidence: 0.80
+
+  # --- REGULATORY_REVIEW ---
+  # ANY ONE condition triggers this (fail-safe):
+  regulatory_review:
+    has_prohibited_claims: true
+    has_critical_severity_findings: true
+    has_conflicting_evidence: true
+    overall_confidence_below: 0.50
+    agent_disagreement: true
+    system_error: true
+    verification_failure: true
+    critic_override_count_above: 3
+
+  # --- REVISE_AND_RECHECK ---
+  # Everything that doesn't match CLEAR or REGULATORY_REVIEW.
+  # Typical triggers (documented for clarity, not evaluated as rules):
+  revise_and_recheck:
+    description: >
+      Applied when there are fixable issues such as missing optional
+      declarations, unsupported or weakly supported claims, minor
+      inconsistencies, or moderate confidence findings.
+
+# --- Severity Weights (used for confidence aggregation) ---
+severity_weights:
+  critical: 1.0
+  major: 0.7
+  minor: 0.3
+  info: 0.1
+
+# --- Agent Confidence Defaults ---
+agent_defaults:
+  min_confidence: 0.0
+  max_confidence: 1.0
+  default_confidence: 0.5
+
+# --- Disclaimer (included in every output) ---
+disclaimer: >
+  DISCLAIMER: This is an automated compliance pre-screening tool.
+  It provides recommendations only and does NOT constitute regulatory
+  approval. A qualified human regulatory expert must review all findings
+  and make the final decision before any label is approved for printing.
+  This system may miss issues or flag false positives. Always consult
+  the latest FSSAI regulations and seek expert guidance.
