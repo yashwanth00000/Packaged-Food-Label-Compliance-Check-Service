@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+{% block title %}Result — {{ report.submission.product_name }}{% endblock %}
+
+{% block content %}
+{% set rec = report.recommendation.value %}
+{% if rec == 'CLEAR_FOR_PRINT' %}
+  {% set rec_class = 'clear' %}
+  {% set rec_icon = '✅' %}
+{% elif rec == 'REVISE_AND_RECHECK' %}
+  {% set rec_class = 'revise' %}
+  {% set rec_icon = '⚠️' %}
+{% else %}
+  {% set rec_class = 'review' %}
+  {% set rec_icon = '🔴' %}
+{% endif %}
+
+<!-- Recommendation Banner -->
+<div class="recommendation-banner {{ rec_class }}">
+    <h1>{{ rec_icon }} {{ rec | replace('_', ' ') }}</h1>
+    <p class="subtitle">Product: <strong>{{ report.submission.product_name }}</strong> &mdash; Check ID: {{ report.check_id }}</p>
+    <p class="subtitle">This is a <strong>recommendation only</strong>. A qualified human expert must make the final decision.</p>
+</div>
+
+<!-- Stats -->
+<div class="stats-row">
+    <div class="stat-card">
+        <div class="stat-value">{{ report.findings | length }}</div>
+        <div class="stat-label">Findings</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">{{ report.claim_verifications | length }}</div>
+        <div class="stat-label">Claims Checked</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">{{ "%.0f" | format(report.overall_confidence * 100) }}%</div>
+        <div class="stat-label">Confidence</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">{{ "%.1f" | format(report.processing_time_seconds) }}s</div>
+        <div class="stat-label">Processing Time</div>
+    </div>
+</div>
+
+<!-- Reasons -->
+{% if report.reasons %}
+<div class="card">
+    <div class="card-header"><span>📋</span><h3>Reasons</h3></div>
+    <ul>
+        {% for r in report.reasons %}
+        <li style="color: var(--text-secondary); margin-bottom: 0.3rem;">{{ r }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<!-- Findings -->
+<div class="card">
+    <div class="card-header"><span>🔍</span><h3>Findings ({{ report.findings | length }})</h3></div>
+    {% if report.findings %}
+        {% for f in report.findings %}
+        <div class="finding-card">
+            <div class="finding-header">
+                <span class="finding-field">{{ f.field | replace('_', ' ') | title }}</span>
+                <div>
+                    <span class="badge badge-{{ f.severity.value }}">{{ f.severity.value }}</span>
+                    <span class="badge badge-info">{{ f.issue_type.value | replace('_', ' ') }}</span>
+                </div>
+            </div>
+            <div class="finding-description">{{ f.description }}</div>
+            {% if f.evidence_quote %}
+            <div class="finding-evidence">"{{ f.evidence_quote }}"</div>
+            {% endif %}
+            <div class="finding-meta">
+                {% if f.regulation_name %}
+                    <span>📖 {{ f.regulation_name }}</span>
+                    {% if "[SAMPLE]" in f.regulation_name %}
+                    <span class="badge" style="background:#475569; color:#f8fafc; font-size:0.65rem; padding:2px 6px;">SAMPLE CITATION</span>
+                    {% endif %}
+                {% endif %}
+                {% if f.clause %}<span>§ {{ f.clause }}</span>{% endif %}
+                {% if f.retrieval_score %}<span>Score: {{ "%.2f" | format(f.retrieval_score) }}</span>{% endif %}
+                <span>Confidence: {{ "%.0f" | format(f.confidence * 100) }}%</span>
+                {% if f.verified_by_critic %}<span style="color: var(--success);">✓ Verified by Critic</span>{% endif %}
+            </div>
+            {% if f.suggested_fix %}
+            <div class="finding-fix">💡 {{ f.suggested_fix }}</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    {% else %}
+        <p style="color: var(--text-secondary);">No compliance findings detected.</p>
+    {% endif %}
+</div>
+
+<!-- Claim Verifications -->
+{% if report.claim_verifications %}
+<div class="card">
+    <div class="card-header"><span>📊</span><h3>Claim Verifications</h3></div>
+    {% for cv in report.claim_verifications %}
+    <div class="finding-card">
+        <div class="finding-header">
+            <span class="finding-field">"{{ cv.claim_text }}"</span>
+            {% if cv.status.value == 'SUPPORTED' %}
+              <span class="badge badge-clear">{{ cv.status.value }}</span>
+            {% elif cv.status.value == 'PROHIBITED' %}
+              <span class="badge badge-review">{{ cv.status.value }}</span>
+            {% else %}
+              <span class="badge badge-revise">{{ cv.status.value }}</span>
+            {% endif %}
+        </div>
+        <div class="finding-description">{{ cv.reason }}</div>
+        {% if cv.evidence_quote %}
+        <div class="finding-evidence">"{{ cv.evidence_quote }}"</div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<!-- Agent Trace -->
+<div class="card">
+    <div class="card-header collapsible-header" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+        <div style="display:flex; align-items:center; gap:0.6rem;"><span>🔗</span><h3>Pipeline Trace</h3></div>
+    </div>
+    <div class="collapsible-body">
+        {% for t in report.agent_trace %}
+        <div class="trace-item">
+            <span class="trace-dot {{ 'error' if t.status == 'error' else 'success' }}"></span>
+            <span style="font-weight:500;">{{ t.agent_name }}</span>
+            <span style="color: var(--text-muted);">{{ t.status }}</span>
+            {% if t.duration_seconds %}<span style="color: var(--text-muted);">{{ "%.2f" | format(t.duration_seconds) }}s</span>{% endif %}
+            {% if t.findings_count %}<span class="badge badge-info" style="font-size:0.7rem;">{{ t.findings_count }} findings</span>{% endif %}
+            {% if t.error_message %}<span style="color: var(--danger); font-size: 0.82rem;">{{ t.error_message }}</span>{% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Expert Review Panel -->
+<div class="expert-panel">
+    <h3>👨‍⚖️ Expert Review & Decision</h3>
+    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+        A qualified regulatory expert must review these findings and make the final decision.
+        The system recommendation above is for guidance only.
+    </p>
+
+    {% if expert_decision %}
+    <div class="expert-decision-display">
+        <p><strong>Decision:</strong>
+            {% if expert_decision.action == 'accept' %}
+            <span class="badge badge-clear">ACCEPTED</span>
+            {% else %}
+            <span class="badge badge-revise">OVERRIDDEN</span>
+            {% endif %}
+        </p>
+        <p><strong>Original Recommendation:</strong> {{ expert_decision.original_recommendation }}</p>
+        {% if expert_decision.reason %}<p><strong>Reason:</strong> {{ expert_decision.reason }}</p>{% endif %}
+        <p><strong>Expert:</strong> {{ expert_decision.expert_name or 'Anonymous' }}</p>
+        <p><strong>Decided At:</strong> {{ expert_decision.decided_at }}</p>
+    </div>
+    {% else %}
+    <form action="/check/{{ report.check_id }}/decision" method="post">
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="expert_name">Expert Name *</label>
+                <input type="text" id="expert_name" name="expert_name" placeholder="Dr. Regulatory Expert" required />
+            </div>
+            <div class="form-group">
+                <label for="expert_key">Expert Auth Key *</label>
+                <input type="password" id="expert_key" name="expert_key" placeholder="Enter expert authorization key" required />
+            </div>
+            <div class="form-group full-width">
+                <label for="action">Decision</label>
+                <select id="action" name="action">
+                    <option value="accept">Accept Recommendation</option>
+                    <option value="override">Override (with reason)</option>
+                </select>
+            </div>
+            <div class="form-group full-width">
+                <label for="reason">Reason / Notes</label>
+                <textarea id="reason" name="reason" rows="2" placeholder="Provide justification for your decision..."></textarea>
+            </div>
+        </div>
+        <div class="expert-actions">
+            <button type="submit" class="btn btn-success">✅ Submit Expert Decision</button>
+            <a href="/" class="btn btn-secondary">Run Another Check</a>
+            <a href="/history" class="btn btn-secondary">View History</a>
+        </div>
+    </form>
+    {% endif %}
+</div>
+{% endblock %}

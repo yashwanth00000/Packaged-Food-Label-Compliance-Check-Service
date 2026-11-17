@@ -1,0 +1,475 @@
+{% extends "base.html" %}
+{% block title %}FSSAI Food Label Compliance Check{% endblock %}
+
+{% block content %}
+<div class="page-header" style="text-align:center; margin-bottom: 2rem;">
+    <h1 class="page-title" style="font-size: 2.2rem; font-weight:800; letter-spacing: -0.5px;">FSSAI Food Label Compliance</h1>
+    <p class="page-subtitle" style="max-width: 650px; margin: 0 auto; color: var(--text-secondary);">
+        Upload label photos for automated AI extraction, or enter details directly for pre-screening against FSSAI Labelling, Display, and Advertising Regulations.
+    </p>
+</div>
+
+<!-- Progress Steps Bar -->
+<div class="progress-bar-container" style="display:flex; justify-content:space-between; margin-bottom: 2rem; background: var(--bg-card); padding: 0.8rem 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); font-size: 0.85rem;">
+    <div style="font-weight:700; color: var(--accent);"><span style="border-bottom: 2px solid var(--accent); padding-bottom: 2px;">1. Upload / Enter</span></div>
+    <div style="color: var(--text-muted);">2. Read Label (AI)</div>
+    <div style="color: var(--text-muted);">3. Review & Verify</div>
+    <div style="color: var(--text-muted);">4. Compliance Check</div>
+    <div style="color: var(--text-muted);">5. Expert Decision</div>
+</div>
+
+<!-- SECTION 1: PHOTO UPLOAD (Stage 0 AI Extraction) -->
+<div class="card upload-card" style="border: 2px dashed var(--border-color); padding: 2rem; text-align: center; margin-bottom: 2rem; background: var(--bg-card); border-radius: 12px; transition: border-color 0.2s;" id="drop-zone">
+    <form action="/scan" method="post" enctype="multipart/form-data" id="photo-upload-form">
+        <div style="font-size: 3rem; margin-bottom: 0.5rem;">📸</div>
+        <h2 style="font-size: 1.4rem; font-weight:700; margin-bottom: 0.5rem;">Scan Packaged Food Label Photos</h2>
+        <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto 1.5rem auto; font-size: 0.95rem;">
+            Upload 1 to 4 photos (front packaging, back panel, nutrition table, ingredient list).
+            On mobile, camera opens directly.
+        </p>
+
+        <!-- Hidden multi-file input with camera capture -->
+        <input type="file" id="label-photos" name="files" accept="image/jpeg,image/png,image/webp" multiple style="display:none;" onchange="handleFileSelect(this.files)" />
+
+        <div style="display:flex; gap: 1rem; justify-content: center; align-items:center; flex-wrap: wrap;">
+            <button type="button" class="btn btn-secondary" id="start-camera-btn" onclick="startCamera()" style="padding: 0.75rem 1.5rem; font-size: 1rem;">
+                📷 Open Live Camera
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="document.getElementById('label-photos').click()" style="padding: 0.75rem 1.5rem; font-size: 1rem;">
+                📁 Choose Existing Photos
+            </button>
+            <button type="button" class="btn btn-secondary" id="capture-btn" onclick="capturePhoto()" style="display:none; padding: 0.75rem 1.5rem; font-size: 1rem;">
+                Capture Photo
+            </button>
+            <button type="button" class="btn btn-secondary" id="stop-camera-btn" onclick="stopCamera()" style="display:none; padding: 0.75rem 1.5rem; font-size: 1rem;">
+                Stop Camera
+            </button>
+            <button type="submit" id="scan-btn" class="btn btn-primary" style="display:none; padding: 0.75rem 1.8rem; font-size: 1rem;">
+                ⚡ Scan Label Photos (AI)
+            </button>
+        </div>
+
+        <div id="camera-panel" style="display:none; max-width:640px; margin:1.25rem auto 0;">
+            <video id="camera-video" autoplay playsinline muted style="width:100%; max-height:420px; background:#111; border-radius:10px; object-fit:contain;"></video>
+            <p style="font-size:.8rem;color:var(--text-muted);margin:.5rem 0 0;">Use bright, even lighting. Hold the package steady and fill the frame with one panel at a time.</p>
+        </div>
+        <!-- Image Previews Container -->
+        <div id="preview-container" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;"></div>
+
+        <!-- Scanning Progress Indicator -->
+        <div id="scan-progress" style="display:none; margin-top: 1.5rem; padding: 1rem; background: var(--bg-body); border-radius: 8px;">
+            <div style="display:flex; align-items:center; justify-content:center; gap: 10px;">
+                <span class="spinner" style="display:inline-block; width:18px; height:18px; border:2px solid var(--accent); border-top-color:transparent; border-radius:50%; animation: spin 0.8s linear infinite;"></span>
+                <span style="font-weight:600; color:var(--text-primary);">Reading label photos & extracting FSSAI declarations...</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin: 6px 0 0 0;">This takes 2-4 seconds.</p>
+        </div>
+    </form>
+
+    <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+        <a href="#manual-form-section" style="color: var(--accent); font-weight:500; text-decoration:none; font-size: 0.95rem;">
+            ✍️ Or enter label details manually instead &darr;
+        </a>
+    </div>
+</div>
+
+<!-- SECTION 2: SAMPLE PRESETS FOR DEMO -->
+<div class="card" style="margin-bottom: 2rem;">
+    <div class="card-header" style="cursor: pointer;" onclick="toggleSampleSection()">
+        <div style="display:flex; align-items:center; gap: 8px;">
+            <span>💡</span>
+            <h3>Quick Demo Profiles</h3>
+        </div>
+        <span id="sample-toggle-icon" style="color:var(--text-muted); font-size:0.85rem;">Click to expand</span>
+    </div>
+    <div id="sample-buttons-wrapper" style="padding-top: 0.75rem;">
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem;">
+            Click a sample label to populate the form below and test compliance rules:
+        </p>
+        <div class="sample-buttons" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            {% for name in samples %}
+            <button type="button" class="btn btn-secondary btn-sm" onclick="loadSample('{{ name }}')">
+                {{ name | replace('_', ' ') | title }}
+            </button>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- SECTION 3: SIMPLIFIED MANUAL ENTRY FORM (NO RAW JSON) -->
+<div id="manual-form-section">
+    <form action="/check" method="post" class="card" id="manual-label-form">
+        <div class="card-header">
+            <span>📝</span>
+            <h2>Label Details (Manual Entry)</h2>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Fill in the label parameters. No raw JSON required. Additive INS codes are auto-detected from ingredients.
+        </p>
+
+        <!-- 1. Basics Section -->
+        <fieldset style="border:1px solid var(--border-color); border-radius:8px; padding:1.25rem; margin-bottom:1.5rem;">
+            <legend style="padding:0 8px; font-weight:700; color:var(--text-primary);">1. Product Basics</legend>
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label for="product_name">Product Name *</label>
+                    <input type="text" id="product_name" name="product_name" required placeholder="e.g. Britannia NutriChoice Digestive" />
+                </div>
+                <div class="form-group">
+                    <label for="product_category">Category</label>
+                    <input type="text" id="product_category" name="product_category" placeholder="e.g. Biscuits / Bakery" />
+                </div>
+                <div class="form-group">
+                    <label for="net_quantity">Net Quantity *</label>
+                    <input type="text" id="net_quantity" name="net_quantity" placeholder="e.g. 100 g" />
+                </div>
+                <div class="form-group full-width">
+                    <label>Veg / Non-Veg Symbol *</label>
+                    <div style="display:flex; gap: 2rem; margin-top: 0.4rem;">
+                        <label style="cursor:pointer; display:flex; align-items:center; gap:8px;">
+                            <input type="radio" name="veg_nonveg_mark" value="veg" checked />
+                            <span style="display:inline-block; width:16px; height:16px; border:2px solid #22c55e; border-radius:3px; text-align:center; line-height:16px;">
+                                <span style="display:inline-block; width:8px; height:8px; background:#22c55e; border-radius:50%; vertical-align:middle;"></span>
+                            </span>
+                            Vegetarian
+                        </label>
+                        <label style="cursor:pointer; display:flex; align-items:center; gap:8px;">
+                            <input type="radio" name="veg_nonveg_mark" value="non-veg" />
+                            <span style="display:inline-block; width:16px; height:16px; border:2px solid #ef4444; border-radius:3px; text-align:center; line-height:16px;">
+                                <span style="display:inline-block; width:8px; height:8px; background:#ef4444; border-radius:50%; vertical-align:middle;"></span>
+                            </span>
+                            Non-Vegetarian
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- 2. Ingredients & Allergens Section -->
+        <fieldset style="border:1px solid var(--border-color); border-radius:8px; padding:1.25rem; margin-bottom:1.5rem;">
+            <legend style="padding:0 8px; font-weight:700; color:var(--text-primary);">2. Ingredients & Allergens</legend>
+            <div class="form-grid">
+                <div class="form-group full-width">
+                    <label for="ingredients_list">Ingredients (comma-separated, in descending order) *</label>
+                    <textarea id="ingredients_list" name="ingredients_list" rows="3" required placeholder="Whole Wheat Flour (55%), Refined Palm Oil, Sugar, Milk Solids, INS 500(ii), INS 322..."></textarea>
+                    <span style="font-size:0.75rem; color:var(--text-muted); display:block; margin-top:4px;">
+                        💡 INS food additives (e.g. INS 500(ii), INS 223) and allergen ingredients are automatically parsed from this text.
+                    </span>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Common Allergens Declared</label>
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.5rem; margin-top:0.4rem;">
+                        {% for allergen in ['Wheat / Gluten', 'Milk', 'Soy', 'Peanut', 'Tree Nuts', 'Egg', 'Fish', 'Crustaceans', 'Sulphites'] %}
+                        <label style="font-size:0.85rem; display:flex; align-items:center; gap:6px; cursor:pointer;">
+                            <input type="checkbox" name="allergen_checkbox[]" value="{{ allergen }}" onchange="updateAllergenText()" />
+                            {{ allergen }}
+                        </label>
+                        {% endfor %}
+                    </div>
+                    <div style="margin-top:0.75rem;">
+                        <input type="text" id="allergen_declaration" name="allergen_declaration" placeholder="Custom or combined statement (e.g. Contains: Wheat, Milk, Soy)" />
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- 3. Nutrition Panel Section (Table instead of JSON) -->
+        <fieldset style="border:1px solid var(--border-color); border-radius:8px; padding:1.25rem; margin-bottom:1.5rem;">
+            <legend style="padding:0 8px; font-weight:700; color:var(--text-primary);">3. Nutrition Information Panel</legend>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div class="form-group">
+                    <label for="serving_size">Serving Size</label>
+                    <input type="text" id="serving_size" name="serving_size" placeholder="e.g. 30g (approx. 6 biscuits)" />
+                </div>
+                <div class="form-group">
+                    <label for="energy_kcal_100g">Energy (kcal per 100g) *</label>
+                    <input type="number" step="0.1" id="energy_kcal_100g" name="energy_kcal_100g" placeholder="e.g. 460" />
+                </div>
+            </div>
+
+            <table id="manual-nutrition-table" style="width:100%; border-collapse:collapse; font-size:0.88rem;">
+                <thead>
+                    <tr style="background:var(--bg-body); border-bottom:1px solid var(--border-color);">
+                        <th style="padding:8px; text-align:left;">Nutrient</th>
+                        <th style="padding:8px; width:25%;">Per 100g</th>
+                        <th style="padding:8px; width:25%;">Per Serving</th>
+                        <th style="padding:8px; width:15%;">Unit</th>
+                        <th style="padding:8px; width:5%;"></th>
+                    </tr>
+                </thead>
+                <tbody id="nutrition-tbody">
+                    {% for nutrient in [
+                        ('Protein', 'g'),
+                        ('Carbohydrate', 'g'),
+                        ('Total Sugars', 'g'),
+                        ('Added Sugars', 'g'),
+                        ('Total Fat', 'g'),
+                        ('Saturated Fat', 'g'),
+                        ('Trans Fat', 'g'),
+                        ('Sodium', 'mg'),
+                        ('Dietary Fibre', 'g')
+                    ] %}
+                    <tr>
+                        <td style="padding:4px;"><input type="text" name="nutrient_name[]" value="{{ nutrient[0] }}" style="padding:4px;" /></td>
+                        <td style="padding:4px;"><input type="number" step="0.01" name="nutrient_100g[]" placeholder="0.0" style="padding:4px;" /></td>
+                        <td style="padding:4px;"><input type="number" step="0.01" name="nutrient_serving[]" placeholder="0.0" style="padding:4px;" /></td>
+                        <td style="padding:4px;"><input type="text" name="nutrient_unit[]" value="{{ nutrient[1] }}" style="padding:4px;" /></td>
+                        <td style="padding:4px; text-align:center;"><button type="button" onclick="this.closest('tr').remove()" style="background:none; border:none; color:var(--text-muted); cursor:pointer;">&times;</button></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="addNutrientRow()" style="margin-top:0.75rem;">
+                + Add Nutrient Row
+            </button>
+        </fieldset>
+
+        <!-- 4. Claims Section (Chips) -->
+        <fieldset style="border:1px solid var(--border-color); border-radius:8px; padding:1.25rem; margin-bottom:1.5rem;">
+            <legend style="padding:0 8px; font-weight:700; color:var(--text-primary);">4. Packaging Claims</legend>
+            <div class="form-group full-width">
+                <label for="claims">Claims (comma-separated or type below)</label>
+                <input type="text" id="claims" name="claims" placeholder="e.g. Source of fibre, Low fat, 100% Natural" />
+                <span style="font-size:0.75rem; color:var(--text-muted); display:block; margin-top:4px;">
+                    Common evaluated claims: "High protein", "Low sugar", "Fat free", "No added sugar", "100% natural", "Source of fibre".
+                </span>
+            </div>
+        </fieldset>
+
+        <!-- 5. Manufacturer & Dates Section -->
+        <fieldset style="border:1px solid var(--border-color); border-radius:8px; padding:1.25rem; margin-bottom:1.5rem;">
+            <legend style="padding:0 8px; font-weight:700; color:var(--text-primary);">5. Manufacturer & Dates</legend>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="fssai_licence_number">FSSAI Licence Number *</label>
+                    <input type="text" id="fssai_licence_number" name="fssai_licence_number" placeholder="14-digit licence number" />
+                </div>
+                <div class="form-group">
+                    <label for="batch_lot">Batch / Lot Number *</label>
+                    <input type="text" id="batch_lot" name="batch_lot" placeholder="e.g. B2024-0842" />
+                </div>
+                <div class="form-group">
+                    <label for="manufacturing_date">Date of Manufacture *</label>
+                    <input type="date" id="manufacturing_date" name="manufacturing_date" />
+                </div>
+                <div class="form-group">
+                    <label for="expiry_date">Expiry Date *</label>
+                    <input type="date" id="expiry_date" name="expiry_date" />
+                </div>
+                <div class="form-group">
+                    <label for="best_before">Best Before</label>
+                    <input type="text" id="best_before" name="best_before" placeholder="e.g. 6 months from packaging" />
+                </div>
+                <div class="form-group">
+                    <label for="country_of_origin">Country of Origin</label>
+                    <input type="text" id="country_of_origin" name="country_of_origin" value="India" />
+                </div>
+                <div class="form-group full-width">
+                    <label for="manufacturer_details">Manufacturer / Packer Name & Full Address *</label>
+                    <textarea id="manufacturer_details" name="manufacturer_details" rows="2" placeholder="e.g. Britannia Industries Ltd, Plot 42, Industrial Area, Pune, Maharashtra - 411001"></textarea>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Collapsed "More Details" Accordion -->
+        <details style="margin-bottom:1.5rem; border:1px solid var(--border-color); border-radius:8px; padding:0.75rem 1.25rem;">
+            <summary style="font-weight:600; cursor:pointer; color:var(--text-secondary);">⚙️ More Details (Optional)</summary>
+            <div class="form-grid" style="margin-top:1rem;">
+                <div class="form-group full-width">
+                    <label for="storage_instructions">Storage Instructions</label>
+                    <input type="text" id="storage_instructions" name="storage_instructions" placeholder="Store in a cool, dry and hygienic place." />
+                </div>
+                <div class="form-group full-width">
+                    <label for="free_text_content">Other Visible Packaging Text</label>
+                    <textarea id="free_text_content" name="free_text_content" rows="2" placeholder="Any promotional text, slogans, or back-panel disclaimers"></textarea>
+                </div>
+            </div>
+        </details>
+
+        <button type="submit" class="btn btn-primary btn-block" style="font-size:1.1rem; padding:0.85rem;">
+            🔍 Run FSSAI Compliance Pre-Screen
+        </button>
+    </form>
+</div>
+
+<style>
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner { animation: spin 0.8s linear infinite; }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let cameraStream = null;
+let selectedFiles = [];
+
+function allSelectedFiles() { return selectedFiles; }
+
+function handleFileSelect(files) {
+    selectedFiles = Array.from(files || []);
+    renderPreviews(selectedFiles);
+}
+
+function renderPreviews(files) {
+    const container = document.getElementById('preview-container');
+    const scanBtn = document.getElementById('scan-btn');
+    container.innerHTML = '';
+    if (!files || files.length === 0) { scanBtn.style.display = 'none'; return; }
+    if (files.length > 4) {
+        alert('Maximum 4 photos allowed. Remove a photo before adding another.');
+        scanBtn.style.display = 'none';
+        return;
+    }
+    selectedFiles = Array.from(files);
+    const transfer = new DataTransfer();
+    selectedFiles.forEach(file => transfer.items.add(file));
+    document.getElementById('label-photos').files = transfer.files;
+    scanBtn.style.display = 'inline-block';
+    files.forEach((file, idx) => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const thumb = document.createElement('div');
+            thumb.style.cssText = 'position:relative;width:110px;height:110px;border-radius:6px;overflow:hidden;border:2px solid var(--accent);background:#000;';
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.alt = 'Captured label image ' + (idx + 1);
+            img.style.cssText = 'width:100%;height:100%;object-fit:cover;';
+            thumb.appendChild(img);
+            const remove = document.createElement('button');
+            remove.type = 'button'; remove.textContent = '×';
+            remove.setAttribute('aria-label', 'Remove photo ' + (idx + 1));
+            remove.style.cssText = 'position:absolute;top:4px;right:4px;width:26px;height:26px;border:0;border-radius:50%;background:#111;color:#fff;font-size:20px;cursor:pointer;';
+            remove.onclick = () => removePhoto(idx);
+            thumb.appendChild(remove);
+            container.appendChild(thumb);
+        };
+        reader.readAsDataURL(file);
+    });
+}
+
+function removePhoto(index) {
+    selectedFiles.splice(index, 1);
+    renderPreviews(selectedFiles);
+}
+
+async function startCamera() {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        alert('Live camera is unavailable in this browser or connection. Use Choose Existing Photos instead.');
+        return;
+    }
+    try {
+        cameraStream = await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}}, audio:false});
+        const video = document.getElementById('camera-video');
+        video.srcObject = cameraStream;
+        await video.play();
+        document.getElementById('camera-panel').style.display = 'block';
+        document.getElementById('capture-btn').style.display = 'inline-block';
+        document.getElementById('stop-camera-btn').style.display = 'inline-block';
+        document.getElementById('start-camera-btn').style.display = 'none';
+    } catch (error) {
+        alert('Unable to open camera: ' + error.message + '. Check browser camera permission or choose existing photos.');
+    }
+}
+
+function stopCamera() {
+    if (cameraStream) cameraStream.getTracks().forEach(track => track.stop());
+    cameraStream = null;
+    document.getElementById('camera-video').srcObject = null;
+    document.getElementById('camera-panel').style.display = 'none';
+    document.getElementById('capture-btn').style.display = 'none';
+    document.getElementById('stop-camera-btn').style.display = 'none';
+    document.getElementById('start-camera-btn').style.display = 'inline-block';
+}
+
+function capturePhoto() {
+    const existing = allSelectedFiles();
+    if (existing.length >= 4) { alert('You can scan up to four photos.'); return; }
+    const video = document.getElementById('camera-video');
+    if (!video.videoWidth || !video.videoHeight) { alert('Camera is not ready yet.'); return; }
+    const canvas = document.createElement('canvas');
+    canvas.width = video.videoWidth; canvas.height = video.videoHeight;
+    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+    canvas.toBlob(blob => {
+        if (!blob) { alert('Could not capture the image. Please try again.'); return; }
+        const file = new File([blob], 'camera_capture_' + (existing.length + 1) + '.jpg', {type:'image/jpeg'});
+        selectedFiles.push(file);
+        renderPreviews(selectedFiles);
+    }, 'image/jpeg', 0.92);
+}
+
+document.getElementById('photo-upload-form').addEventListener('submit', function() {
+    stopCamera();
+    document.getElementById('scan-btn').disabled = true;
+    document.getElementById('scan-progress').style.display = 'block';
+});
+
+function addNutrientRow() {
+    const tbody = document.getElementById('nutrition-tbody');
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+        <td style="padding:4px;"><input type="text" name="nutrient_name[]" placeholder="Nutrient Name" style="padding:4px;" /></td>
+        <td style="padding:4px;"><input type="number" step="0.01" name="nutrient_100g[]" placeholder="0.0" style="padding:4px;" /></td>
+        <td style="padding:4px;"><input type="number" step="0.01" name="nutrient_serving[]" placeholder="0.0" style="padding:4px;" /></td>
+        <td style="padding:4px;"><input type="text" name="nutrient_unit[]" value="g" style="padding:4px;" /></td>
+        <td style="padding:4px; text-align:center;"><button type="button" onclick="this.closest('tr').remove()" style="background:none; border:none; color:var(--text-muted); cursor:pointer;">&times;</button></td>
+    `;
+    tbody.appendChild(tr);
+}
+
+function updateAllergenText() {
+    const checked = Array.from(document.querySelectorAll("input[name='allergen_checkbox[]']:checked")).map(cb => cb.value);
+    const textInput = document.getElementById('allergen_declaration');
+    if (checked.length > 0) {
+        textInput.value = "Contains: " + checked.join(", ");
+    }
+}
+
+async function loadSample(name) {
+    try {
+        const resp = await fetch('/sample/' + name);
+        const data = await resp.json();
+        if (data.error) { alert(data.error); return; }
+
+        document.getElementById('product_name').value = data.product_name || '';
+        document.getElementById('product_category').value = data.product_category || '';
+        document.getElementById('net_quantity').value = data.net_quantity || '';
+        document.getElementById('ingredients_list').value = (data.ingredients_list || []).join(', ');
+        document.getElementById('allergen_declaration').value = data.allergen_declaration || '';
+        document.getElementById('fssai_licence_number').value = data.fssai_licence_number || '';
+        document.getElementById('manufacturer_details').value = data.manufacturer_details || '';
+        document.getElementById('batch_lot').value = data.batch_lot || '';
+        document.getElementById('manufacturing_date').value = data.manufacturing_date || '';
+        document.getElementById('expiry_date').value = data.expiry_date || '';
+        document.getElementById('best_before').value = data.best_before || '';
+        document.getElementById('country_of_origin').value = data.country_of_origin || 'India';
+        document.getElementById('claims').value = (data.claims || []).join(', ');
+
+        if (data.nutritional_info) {
+            document.getElementById('serving_size').value = data.nutritional_info.serving_size || '';
+            document.getElementById('energy_kcal_100g').value = data.nutritional_info.energy_kcal_per_100g || '';
+
+            // Populate table rows
+            const tbody = document.getElementById('nutrition-tbody');
+            tbody.innerHTML = '';
+            (data.nutritional_info.nutrients || []).forEach(n => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td style="padding:4px;"><input type="text" name="nutrient_name[]" value="${n.name}" style="padding:4px;" /></td>
+                    <td style="padding:4px;"><input type="number" step="0.01" name="nutrient_100g[]" value="${n.per_100g ?? ''}" style="padding:4px;" /></td>
+                    <td style="padding:4px;"><input type="number" step="0.01" name="nutrient_serving[]" value="${n.per_serving ?? ''}" style="padding:4px;" /></td>
+                    <td style="padding:4px;"><input type="text" name="nutrient_unit[]" value="${n.unit || 'g'}" style="padding:4px;" /></td>
+                    <td style="padding:4px; text-align:center;"><button type="button" onclick="this.closest('tr').remove()" style="background:none; border:none; color:var(--text-muted); cursor:pointer;">&times;</button></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Scroll smoothly to manual form
+        document.getElementById('manual-form-section').scrollIntoView({ behavior: 'smooth' });
+    } catch (e) {
+        console.error(e);
+    }
+}
+</script>
+{% endblock %}
