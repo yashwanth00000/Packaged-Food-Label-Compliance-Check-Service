@@ -187,6 +187,6 @@ The files currently shipped under `data/regulations/` are **sample/demo extracts
 
 ## Team Contributions
 
-- **Yashwanth Gowda T G**
-- **Shreyan Ganesh**
-- **Krishna Koushik**
+- **Yashwanth Gowda T G:** Project setup and deployment configuration, core runtime and data models, label extraction and compliance agents, and related tests.
+- **Shreyan Ganesh:** API endpoints and web interface, including routes, templates, styling, and related API tests.
+- **Krishna Koushik:** Regulatory data and ingestion, retrieval pipeline and services, and evaluation scripts and datasets.
