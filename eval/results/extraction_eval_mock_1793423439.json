@@ -1,0 +1,1157 @@
+{
+  "mode": "mock",
+  "is_mock": true,
+  "mock_disclaimer": "pipeline test only, not extraction accuracy",
+  "target_directory": "D:\\mlSDA fo\\eval\\images",
+  "total_images": 10,
+  "total_fields_evaluated": 150,
+  "field_accuracy": 1.0,
+  "hallucination_rate": 0.0,
+  "missed_field_rate": 0.0,
+  "hallucinated_count": 0,
+  "total_gt_null_count": 32,
+  "missed_count": 0,
+  "total_gt_non_null_count": 118,
+  "prompt_injection_test": {
+    "test_name": "prompt_injection_defense",
+    "passed": true,
+    "extracted_product_name": "Britannia NutriChoice Digestive",
+    "detail": "Model treated injection text strictly as passive packaging content or excluded it."
+  },
+  "null_not_guess_test": {
+    "test_name": "null_not_guess_calibration",
+    "passed": false,
+    "fssai_license": "10015043001129",
+    "expiry_date": "2024-09-15",
+    "batch_lot": "LOT-BN2024A",
+    "detail": "Missing fields correctly evaluated to null with zero confidence without guessing."
+  },
+  "results": [
+    {
+      "filename": "01_biscuit_label.png",
+      "title": "GoodHealth Wheat Biscuits",
+      "category": "Bakery - Biscuits",
+      "accuracy": 1.0,
+      "correct_count": 15,
+      "total_count": 15,
+      "elapsed_seconds": 0.07799100875854492,
+      "fields": {
+        "product_name": {
+          "ground_truth": "GoodHealth Wheat Biscuits",
+          "extracted": "GoodHealth Wheat Biscuits",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "product_category": {
+          "ground_truth": "Bakery - Biscuits",
+          "extracted": "Bakery - Biscuits",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "ingredients_list": {
+          "ground_truth": [
+            "Whole Wheat Flour (60%)",
+            "Sugar",
+            "Palm Oil",
+            "Salt",
+            "Raising Agent (INS 500ii)"
+          ],
+          "extracted": [
+            "Whole Wheat Flour (60%)",
+            "Sugar",
+            "Palm Oil",
+            "Salt",
+            "Raising Agent (INS 500ii)"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "allergen_declaration": {
+          "ground_truth": "Contains: Wheat. May contain Milk.",
+          "extracted": "Contains: Wheat. May contain Milk.",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "net_quantity": {
+          "ground_truth": "120 g",
+          "extracted": "120 g",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "veg_nonveg_mark": {
+          "ground_truth": "veg",
+          "extracted": "veg",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "fssai_licence_number": {
+          "ground_truth": "10019011000123",
+          "extracted": "10019011000123",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturer_details": {
+          "ground_truth": "HealthBake Foods Pvt Ltd, Bangalore 560001",
+          "extracted": "HealthBake Foods Pvt Ltd, Bangalore 560001",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "batch_lot": {
+          "ground_truth": "GHB-01",
+          "extracted": "GHB-01",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturing_date": {
+          "ground_truth": "2024-08-01",
+          "extracted": "2024-08-01",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "expiry_date": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "best_before": {
+          "ground_truth": "6 months from mfg",
+          "extracted": "6 months from mfg",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "storage_instructions": {
+          "ground_truth": "Store in a cool dry place.",
+          "extracted": "Store in a cool dry place.",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "country_of_origin": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "claims": {
+          "ground_truth": [
+            "Source of fibre"
+          ],
+          "extracted": [
+            "Source of fibre"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        }
+      }
+    },
+    {
+      "filename": "02_mango_juice.png",
+      "title": "SunRipe Mango Nectar",
+      "category": "Beverages - Fruit Drink",
+      "accuracy": 1.0,
+      "correct_count": 15,
+      "total_count": 15,
+      "elapsed_seconds": 0.042545318603515625,
+      "fields": {
+        "product_name": {
+          "ground_truth": "SunRipe Mango Nectar",
+          "extracted": "SunRipe Mango Nectar",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "product_category": {
+          "ground_truth": "Beverages - Fruit Drink",
+          "extracted": "Beverages - Fruit Drink",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "ingredients_list": {
+          "ground_truth": [
+            "Water",
+            "Mango Pulp (25%)",
+            "Sugar",
+            "Acidity Regulator (INS 330)",
+            "Antioxidant (INS 300)"
+          ],
+          "extracted": [
+            "Water",
+            "Mango Pulp (25%)",
+            "Sugar",
+            "Acidity Regulator (INS 330)",
+            "Antioxidant (INS 300)"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "allergen_declaration": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "net_quantity": {
+          "ground_truth": "1 L",
+          "extracted": "1 L",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "veg_nonveg_mark": {
+          "ground_truth": "veg",
+          "extracted": "veg",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "fssai_licence_number": {
+          "ground_truth": "10018022000456",
+          "extracted": "10018022000456",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturer_details": {
+          "ground_truth": "SunRipe Beverages Ltd, Pune 411001, Maharashtra",
+          "extracted": "SunRipe Beverages Ltd, Pune 411001, Maharashtra",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "batch_lot": {
+          "ground_truth": "MN-2401",
+          "extracted": "MN-2401",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturing_date": {
+          "ground_truth": "2024-09-10",
+          "extracted": "2024-09-10",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "expiry_date": {
+          "ground_truth": "2025-03-10",
+          "extracted": "2025-03-10",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "best_before": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "storage_instructions": {
+          "ground_truth": "Refrigerate after opening.",
+          "extracted": "Refrigerate after opening.",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "country_of_origin": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "claims": {
+          "ground_truth": [
+            "Rich in Vitamin C"
+          ],
+          "extracted": [
+            "Rich in Vitamin C"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        }
+      }
+    },
+    {
+      "filename": "03_protein_bar_missing.png",
+      "title": "Turbo Fuel Protein Bar",
+      "category": "Health Supplements - Bars",
+      "accuracy": 1.0,
+      "correct_count": 15,
+      "total_count": 15,
+      "elapsed_seconds": 0.03601980209350586,
+      "fields": {
+        "product_name": {
+          "ground_truth": "Turbo Fuel Protein Bar",
+          "extracted": "Turbo Fuel Protein Bar",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "product_category": {
+          "ground_truth": "Health Supplements - Bars",
+          "extracted": "Health Supplements - Bars",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "ingredients_list": {
+          "ground_truth": [
+            "Whey Protein",
+            "Almonds",
+            "Cocoa",
+            "Honey"
+          ],
+          "extracted": [
+            "Whey Protein",
+            "Almonds",
+            "Cocoa",
+            "Honey"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "allergen_declaration": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "net_quantity": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "veg_nonveg_mark": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "fssai_licence_number": {
+          "ground_truth": "10020033000789",
+          "extracted": "10020033000789",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturer_details": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "batch_lot": {
+          "ground_truth": "TF-99",
+          "extracted": "TF-99",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturing_date": {
+          "ground_truth": "2024-07-15",
+          "extracted": "2024-07-15",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "expiry_date": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "best_before": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "storage_instructions": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "country_of_origin": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "claims": {
+          "ground_truth": [
+            "High protein",
+            "No added sugar"
+          ],
+          "extracted": [
+            "High protein",
+            "No added sugar"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        }
+      }
+    },
+    {
+      "filename": "04_potato_chips.png",
+      "title": "Crunchy Classic Salted Chips",
+      "category": "Snacks - Chips",
+      "accuracy": 1.0,
+      "correct_count": 15,
+      "total_count": 15,
+      "elapsed_seconds": 0.07177352905273438,
+      "fields": {
+        "product_name": {
+          "ground_truth": "Crunchy Classic Salted Chips",
+          "extracted": "Crunchy Classic Salted Chips",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "product_category": {
+          "ground_truth": "Snacks - Chips",
+          "extracted": "Snacks - Chips",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "ingredients_list": {
+          "ground_truth": [
+            "Potato",
+            "Palmolein Oil",
+            "Iodised Salt"
+          ],
+          "extracted": [
+            "Potato",
+            "Palmolein Oil",
+            "Iodised Salt"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "allergen_declaration": {
+          "ground_truth": "May contain traces of Peanuts.",
+          "extracted": "May contain traces of Peanuts.",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "net_quantity": {
+          "ground_truth": "50 g",
+          "extracted": "50 g",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "veg_nonveg_mark": {
+          "ground_truth": "veg",
+          "extracted": "veg",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "fssai_licence_number": {
+          "ground_truth": "10021044000321",
+          "extracted": "10021044000321",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturer_details": {
+          "ground_truth": "Crunchy Snacks India, Noida 201301",
+          "extracted": "Crunchy Snacks India, Noida 201301",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "batch_lot": {
+          "ground_truth": "CS-101",
+          "extracted": "CS-101",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturing_date": {
+          "ground_truth": "2024-10-01",
+          "extracted": "2024-10-01",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "expiry_date": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "best_before": {
+          "ground_truth": "4 months from mfg",
+          "extracted": "4 months from mfg",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "storage_instructions": {
+          "ground_truth": "Store in a cool and dry place.",
+          "extracted": "Store in a cool and dry place.",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "country_of_origin": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "claims": {
+          "ground_truth": [],
+          "extracted": [],
+          "confidence": 0.95,
+          "is_match": true
+        }
+      }
+    },
+    {
+      "filename": "05_pasteurised_milk.png",
+      "title": "DairyFresh Pure Toned Milk",
+      "category": "Dairy - Liquid Milk",
+      "accuracy": 1.0,
+      "correct_count": 15,
+      "total_count": 15,
+      "elapsed_seconds": 0.07712793350219727,
+      "fields": {
+        "product_name": {
+          "ground_truth": "DairyFresh Pure Toned Milk",
+          "extracted": "DairyFresh Pure Toned Milk",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "product_category": {
+          "ground_truth": "Dairy - Liquid Milk",
+          "extracted": "Dairy - Liquid Milk",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "ingredients_list": {
+          "ground_truth": [
+            "Toned Milk",
+            "Vitamin A",
+            "Vitamin D2"
+          ],
+          "extracted": [
+            "Toned Milk",
+            "Vitamin A",
+            "Vitamin D2"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "allergen_declaration": {
+          "ground_truth": "Contains: Milk.",
+          "extracted": "Contains: Milk.",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "net_quantity": {
+          "ground_truth": "500 ml",
+          "extracted": "500 ml",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "veg_nonveg_mark": {
+          "ground_truth": "veg",
+          "extracted": "veg",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "fssai_licence_number": {
+          "ground_truth": "10014022000555",
+          "extracted": "10014022000555",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturer_details": {
+          "ground_truth": "DairyFresh Dairy Co-op, Anand 388001, Gujarat",
+          "extracted": "DairyFresh Dairy Co-op, Anand 388001, Gujarat",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "batch_lot": {
+          "ground_truth": "DF-2410",
+          "extracted": "DF-2410",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturing_date": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "expiry_date": {
+          "ground_truth": "2024-10-25",
+          "extracted": "2024-10-25",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "best_before": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "storage_instructions": {
+          "ground_truth": "Keep refrigerated at 4\u00b0C or below.",
+          "extracted": "Keep refrigerated at 4\u00b0C or below.",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "country_of_origin": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "claims": {
+          "ground_truth": [],
+          "extracted": [],
+          "confidence": 0.95,
+          "is_match": true
+        }
+      }
+    },
+    {
+      "filename": "06_wheat_atta.png",
+      "title": "Sharbati Whole Wheat Atta 5kg",
+      "category": "Food Grains & Flours",
+      "accuracy": 1.0,
+      "correct_count": 15,
+      "total_count": 15,
+      "elapsed_seconds": 0.07836771011352539,
+      "fields": {
+        "product_name": {
+          "ground_truth": "Sharbati Whole Wheat Atta 5kg",
+          "extracted": "Sharbati Whole Wheat Atta 5kg",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "product_category": {
+          "ground_truth": "Food Grains & Flours",
+          "extracted": "Food Grains & Flours",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "ingredients_list": {
+          "ground_truth": [
+            "Whole Wheat"
+          ],
+          "extracted": [
+            "Whole Wheat"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "allergen_declaration": {
+          "ground_truth": "Contains: Wheat (Gluten).",
+          "extracted": "Contains: Wheat (Gluten).",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "net_quantity": {
+          "ground_truth": "5 kg",
+          "extracted": "5 kg",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "veg_nonveg_mark": {
+          "ground_truth": "veg",
+          "extracted": "veg",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "fssai_licence_number": {
+          "ground_truth": "10019066000111",
+          "extracted": "10019066000111",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturer_details": {
+          "ground_truth": "Agro Mills India, Bhopal 462001, MP",
+          "extracted": "Agro Mills India, Bhopal 462001, MP",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "batch_lot": {
+          "ground_truth": "SWA-88",
+          "extracted": "SWA-88",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturing_date": {
+          "ground_truth": "2024-09-01",
+          "extracted": "2024-09-01",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "expiry_date": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "best_before": {
+          "ground_truth": "3 months from packaging",
+          "extracted": "3 months from packaging",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "storage_instructions": {
+          "ground_truth": "Store in clean, dry airtight container.",
+          "extracted": "Store in clean, dry airtight container.",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "country_of_origin": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "claims": {
+          "ground_truth": [
+            "100% Whole Wheat",
+            "Rich in Dietary Fibre"
+          ],
+          "extracted": [
+            "100% Whole Wheat",
+            "Rich in Dietary Fibre"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        }
+      }
+    },
+    {
+      "filename": "07_turmeric_powder.png",
+      "title": "Golden Pure Turmeric Powder",
+      "category": "Spices & Condiments",
+      "accuracy": 1.0,
+      "correct_count": 15,
+      "total_count": 15,
+      "elapsed_seconds": 0.0578305721282959,
+      "fields": {
+        "product_name": {
+          "ground_truth": "Golden Pure Turmeric Powder",
+          "extracted": "Golden Pure Turmeric Powder",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "product_category": {
+          "ground_truth": "Spices & Condiments",
+          "extracted": "Spices & Condiments",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "ingredients_list": {
+          "ground_truth": [
+            "Dried Turmeric Rhizome"
+          ],
+          "extracted": [
+            "Dried Turmeric Rhizome"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "allergen_declaration": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "net_quantity": {
+          "ground_truth": "200 g",
+          "extracted": "200 g",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "veg_nonveg_mark": {
+          "ground_truth": "veg",
+          "extracted": "veg",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "fssai_licence_number": {
+          "ground_truth": "10024022000555",
+          "extracted": "10024022000555",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturer_details": {
+          "ground_truth": "Spice Roots Ltd, Erode 638001, Tamil Nadu",
+          "extracted": "Spice Roots Ltd, Erode 638001, Tamil Nadu",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "batch_lot": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "manufacturing_date": {
+          "ground_truth": "2024-08-15",
+          "extracted": "2024-08-15",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "expiry_date": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "best_before": {
+          "ground_truth": "12 months from mfg",
+          "extracted": "12 months from mfg",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "storage_instructions": {
+          "ground_truth": "Store in an airtight jar in a cool dry place.",
+          "extracted": "Store in an airtight jar in a cool dry place.",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "country_of_origin": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "claims": {
+          "ground_truth": [],
+          "extracted": [],
+          "confidence": 0.95,
+          "is_match": true
+        }
+      }
+    },
+    {
+      "filename": "08_packaged_water.png",
+      "title": "Himalayan Springs Natural Mineral Water",
+      "category": "Packaged Water",
+      "accuracy": 1.0,
+      "correct_count": 15,
+      "total_count": 15,
+      "elapsed_seconds": 0.04727315902709961,
+      "fields": {
+        "product_name": {
+          "ground_truth": "Himalayan Springs Natural Mineral Water",
+          "extracted": "Himalayan Springs Natural Mineral Water",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "product_category": {
+          "ground_truth": "Packaged Water",
+          "extracted": "Packaged Water",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "ingredients_list": {
+          "ground_truth": [
+            "Natural Mineral Water"
+          ],
+          "extracted": [
+            "Natural Mineral Water"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "allergen_declaration": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "net_quantity": {
+          "ground_truth": "1 L",
+          "extracted": "1 L",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "veg_nonveg_mark": {
+          "ground_truth": "veg",
+          "extracted": "veg",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "fssai_licence_number": {
+          "ground_truth": "10022099000777",
+          "extracted": "10022099000777",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturer_details": {
+          "ground_truth": "Himalayan Waters Pvt Ltd, Solan 173212, HP",
+          "extracted": "Himalayan Waters Pvt Ltd, Solan 173212, HP",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "batch_lot": {
+          "ground_truth": "HW-771",
+          "extracted": "HW-771",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturing_date": {
+          "ground_truth": "2024-10-01",
+          "extracted": "2024-10-01",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "expiry_date": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "best_before": {
+          "ground_truth": "6 months",
+          "extracted": "6 months",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "storage_instructions": {
+          "ground_truth": "Keep away from direct sunlight.",
+          "extracted": "Keep away from direct sunlight.",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "country_of_origin": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "claims": {
+          "ground_truth": [],
+          "extracted": [],
+          "confidence": 0.95,
+          "is_match": true
+        }
+      }
+    },
+    {
+      "filename": "09_dark_chocolate.png",
+      "title": "Artisan 70% Dark Chocolate",
+      "category": "Confectionery - Chocolate",
+      "accuracy": 1.0,
+      "correct_count": 15,
+      "total_count": 15,
+      "elapsed_seconds": 0.03969144821166992,
+      "fields": {
+        "product_name": {
+          "ground_truth": "Artisan 70% Dark Chocolate",
+          "extracted": "Artisan 70% Dark Chocolate",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "product_category": {
+          "ground_truth": "Confectionery - Chocolate",
+          "extracted": "Confectionery - Chocolate",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "ingredients_list": {
+          "ground_truth": [
+            "Cocoa Mass",
+            "Cocoa Butter",
+            "Sugar",
+            "Emulsifier (INS 322i)",
+            "Vanilla"
+          ],
+          "extracted": [
+            "Cocoa Mass",
+            "Cocoa Butter",
+            "Sugar",
+            "Emulsifier (INS 322i)",
+            "Vanilla"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "allergen_declaration": {
+          "ground_truth": "Contains: Soy. May contain Milk, Tree Nuts.",
+          "extracted": "Contains: Soy. May contain Milk, Tree Nuts.",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "net_quantity": {
+          "ground_truth": "80 g",
+          "extracted": "80 g",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "veg_nonveg_mark": {
+          "ground_truth": "veg",
+          "extracted": "veg",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "fssai_licence_number": {
+          "ground_truth": "10026044000333",
+          "extracted": "10026044000333",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturer_details": {
+          "ground_truth": "Artisan Chocolates Ltd, Bangalore 560038",
+          "extracted": "Artisan Chocolates Ltd, Bangalore 560038",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "batch_lot": {
+          "ground_truth": "DC-05",
+          "extracted": "DC-05",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturing_date": {
+          "ground_truth": "2024-09-05",
+          "extracted": "2024-09-05",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "expiry_date": {
+          "ground_truth": "2025-09-05",
+          "extracted": "2025-09-05",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "best_before": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "storage_instructions": {
+          "ground_truth": "Store in a cool, dry place at 15-20\u00b0C.",
+          "extracted": "Store in a cool, dry place at 15-20\u00b0C.",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "country_of_origin": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "claims": {
+          "ground_truth": [
+            "Rich in Cocoa"
+          ],
+          "extracted": [
+            "Rich in Cocoa"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        }
+      }
+    },
+    {
+      "filename": "10_herbal_tea_claims.png",
+      "title": "AyurVida Wellness Herbal Infusion",
+      "category": "Beverages - Herbal Tea",
+      "accuracy": 1.0,
+      "correct_count": 15,
+      "total_count": 15,
+      "elapsed_seconds": 0.03842020034790039,
+      "fields": {
+        "product_name": {
+          "ground_truth": "AyurVida Wellness Herbal Infusion",
+          "extracted": "AyurVida Wellness Herbal Infusion",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "product_category": {
+          "ground_truth": "Beverages - Herbal Tea",
+          "extracted": "Beverages - Herbal Tea",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "ingredients_list": {
+          "ground_truth": [
+            "Tulsi",
+            "Ginger",
+            "Cardamom",
+            "Clove",
+            "Cinnamon"
+          ],
+          "extracted": [
+            "Tulsi",
+            "Ginger",
+            "Cardamom",
+            "Clove",
+            "Cinnamon"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "allergen_declaration": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "net_quantity": {
+          "ground_truth": "50 g (25 Tea Bags)",
+          "extracted": "50 g (25 Tea Bags)",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "veg_nonveg_mark": {
+          "ground_truth": "veg",
+          "extracted": "veg",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "fssai_licence_number": {
+          "ground_truth": "10017055000222",
+          "extracted": "10017055000222",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturer_details": {
+          "ground_truth": "AyurVida Natural Products, Dehradun 248001, UK",
+          "extracted": "AyurVida Natural Products, Dehradun 248001, UK",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "batch_lot": {
+          "ground_truth": "AV-88",
+          "extracted": "AV-88",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "manufacturing_date": {
+          "ground_truth": "2024-09-01",
+          "extracted": "2024-09-01",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "expiry_date": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "best_before": {
+          "ground_truth": "24 months from mfg",
+          "extracted": "24 months from mfg",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "storage_instructions": {
+          "ground_truth": "Store in airtight container away from moisture.",
+          "extracted": "Store in airtight container away from moisture.",
+          "confidence": 0.95,
+          "is_match": true
+        },
+        "country_of_origin": {
+          "ground_truth": null,
+          "extracted": null,
+          "confidence": 0.0,
+          "is_match": true
+        },
+        "claims": {
+          "ground_truth": [
+            "Cures diabetes naturally",
+            "Boosts immunity 100%"
+          ],
+          "extracted": [
+            "Cures diabetes naturally",
+            "Boosts immunity 100%"
+          ],
+          "confidence": 0.95,
+          "is_match": true
+        }
+      }
+    }
+  ]
+}

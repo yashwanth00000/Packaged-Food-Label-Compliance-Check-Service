@@ -1,0 +1,44 @@
+{
+  "_comment": "Ground truth for real Indian packaged food photos in eval/images/real/. Add actual packet photos (front, back, nutrition panel) here.",
+  "01_real_parle_g.jpg": {
+    "title": "Parle-G Original Glucose Biscuits",
+    "category": "Biscuits & Bakery",
+    "ground_truth": {
+      "product_name": "Parle-G Original Gluco Biscuits",
+      "product_category": "Biscuits",
+      "ingredients_list": ["Wheat Flour", "Sugar", "Refined Palm Oil", "Invert Sugar Syrup", "Raising Agents", "Salt", "Milk Solids"],
+      "allergen_declaration": "Contains Wheat and Milk.",
+      "net_quantity": "250 g",
+      "veg_nonveg_mark": "veg",
+      "fssai_licence_number": "10013022002253",
+      "manufacturer_details": "Parle Products Pvt Ltd, V.S. Khandekar Marg, Vile Parle East, Mumbai 400057",
+      "batch_lot": "B240501",
+      "manufacturing_date": "2024-05-01",
+      "expiry_date": "2024-11-01",
+      "best_before": "6 months from packaging",
+      "storage_instructions": "Store in a cool, dry and hygienic place.",
+      "country_of_origin": "India",
+      "claims": ["India's Favourite Biscuit", "Goodness of Wheat and Milk"]
+    }
+  },
+  "02_real_amul_butter.jpg": {
+    "title": "Amul Pasteurised Butter 100g",
+    "category": "Dairy",
+    "ground_truth": {
+      "product_name": "Amul Pasteurised Butter",
+      "product_category": "Dairy",
+      "ingredients_list": ["Butter", "Common Salt"],
+      "allergen_declaration": "Contains Milk.",
+      "net_quantity": "100 g",
+      "veg_nonveg_mark": "veg",
+      "fssai_licence_number": "10012021000071",
+      "manufacturer_details": "Gujarat Cooperative Milk Marketing Federation Ltd, Anand 388001",
+      "batch_lot": "M4091A",
+      "manufacturing_date": "2024-05-15",
+      "best_before": "9 months from packaging",
+      "storage_instructions": "Keep refrigerated at 4 deg C or below.",
+      "country_of_origin": "India",
+      "claims": ["Utterly Butterly Delicious"]
+    }
+  }
+}

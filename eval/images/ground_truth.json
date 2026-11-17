@@ -1,0 +1,270 @@
+{
+  "01_biscuit_label.png": {
+    "title": "GoodHealth Wheat Biscuits",
+    "category": "Bakery - Biscuits",
+    "ground_truth": {
+      "product_name": "GoodHealth Wheat Biscuits",
+      "product_category": "Bakery - Biscuits",
+      "ingredients_list": [
+        "Whole Wheat Flour (60%)",
+        "Sugar",
+        "Palm Oil",
+        "Salt",
+        "Raising Agent (INS 500ii)"
+      ],
+      "allergen_declaration": "Contains: Wheat. May contain Milk.",
+      "net_quantity": "120 g",
+      "veg_nonveg_mark": "veg",
+      "fssai_licence_number": "10019011000123",
+      "manufacturer_details": "HealthBake Foods Pvt Ltd, Bangalore 560001",
+      "batch_lot": "GHB-01",
+      "manufacturing_date": "2024-08-01",
+      "expiry_date": null,
+      "best_before": "6 months from mfg",
+      "storage_instructions": "Store in a cool dry place.",
+      "country_of_origin": null,
+      "claims": [
+        "Source of fibre"
+      ]
+    }
+  },
+  "02_mango_juice.png": {
+    "title": "SunRipe Mango Nectar",
+    "category": "Beverages - Fruit Drink",
+    "ground_truth": {
+      "product_name": "SunRipe Mango Nectar",
+      "product_category": "Beverages - Fruit Drink",
+      "ingredients_list": [
+        "Water",
+        "Mango Pulp (25%)",
+        "Sugar",
+        "Acidity Regulator (INS 330)",
+        "Antioxidant (INS 300)"
+      ],
+      "allergen_declaration": null,
+      "net_quantity": "1 L",
+      "veg_nonveg_mark": "veg",
+      "fssai_licence_number": "10018022000456",
+      "manufacturer_details": "SunRipe Beverages Ltd, Pune 411001, Maharashtra",
+      "batch_lot": "MN-2401",
+      "manufacturing_date": "2024-09-10",
+      "expiry_date": "2025-03-10",
+      "best_before": null,
+      "storage_instructions": "Refrigerate after opening.",
+      "country_of_origin": null,
+      "claims": [
+        "Rich in Vitamin C"
+      ]
+    }
+  },
+  "03_protein_bar_missing.png": {
+    "title": "Turbo Fuel Protein Bar",
+    "category": "Health Supplements - Bars",
+    "ground_truth": {
+      "product_name": "Turbo Fuel Protein Bar",
+      "product_category": "Health Supplements - Bars",
+      "ingredients_list": [
+        "Whey Protein",
+        "Almonds",
+        "Cocoa",
+        "Honey"
+      ],
+      "allergen_declaration": null,
+      "net_quantity": null,
+      "veg_nonveg_mark": null,
+      "fssai_licence_number": "10020033000789",
+      "manufacturer_details": null,
+      "batch_lot": "TF-99",
+      "manufacturing_date": "2024-07-15",
+      "expiry_date": null,
+      "best_before": null,
+      "storage_instructions": null,
+      "country_of_origin": null,
+      "claims": [
+        "High protein",
+        "No added sugar"
+      ]
+    }
+  },
+  "04_potato_chips.png": {
+    "title": "Crunchy Classic Salted Chips",
+    "category": "Snacks - Chips",
+    "ground_truth": {
+      "product_name": "Crunchy Classic Salted Chips",
+      "product_category": "Snacks - Chips",
+      "ingredients_list": [
+        "Potato",
+        "Palmolein Oil",
+        "Iodised Salt"
+      ],
+      "allergen_declaration": "May contain traces of Peanuts.",
+      "net_quantity": "50 g",
+      "veg_nonveg_mark": "veg",
+      "fssai_licence_number": "10021044000321",
+      "manufacturer_details": "Crunchy Snacks India, Noida 201301",
+      "batch_lot": "CS-101",
+      "manufacturing_date": "2024-10-01",
+      "expiry_date": null,
+      "best_before": "4 months from mfg",
+      "storage_instructions": "Store in a cool and dry place.",
+      "country_of_origin": null,
+      "claims": []
+    }
+  },
+  "05_pasteurised_milk.png": {
+    "title": "DairyFresh Pure Toned Milk",
+    "category": "Dairy - Liquid Milk",
+    "ground_truth": {
+      "product_name": "DairyFresh Pure Toned Milk",
+      "product_category": "Dairy - Liquid Milk",
+      "ingredients_list": [
+        "Toned Milk",
+        "Vitamin A",
+        "Vitamin D2"
+      ],
+      "allergen_declaration": "Contains: Milk.",
+      "net_quantity": "500 ml",
+      "veg_nonveg_mark": "veg",
+      "fssai_licence_number": "10014022000555",
+      "manufacturer_details": "DairyFresh Dairy Co-op, Anand 388001, Gujarat",
+      "batch_lot": "DF-2410",
+      "manufacturing_date": null,
+      "expiry_date": "2024-10-25",
+      "best_before": null,
+      "storage_instructions": "Keep refrigerated at 4\u00b0C or below.",
+      "country_of_origin": null,
+      "claims": []
+    }
+  },
+  "06_wheat_atta.png": {
+    "title": "Sharbati Whole Wheat Atta 5kg",
+    "category": "Food Grains & Flours",
+    "ground_truth": {
+      "product_name": "Sharbati Whole Wheat Atta 5kg",
+      "product_category": "Food Grains & Flours",
+      "ingredients_list": [
+        "Whole Wheat"
+      ],
+      "allergen_declaration": "Contains: Wheat (Gluten).",
+      "net_quantity": "5 kg",
+      "veg_nonveg_mark": "veg",
+      "fssai_licence_number": "10019066000111",
+      "manufacturer_details": "Agro Mills India, Bhopal 462001, MP",
+      "batch_lot": "SWA-88",
+      "manufacturing_date": "2024-09-01",
+      "expiry_date": null,
+      "best_before": "3 months from packaging",
+      "storage_instructions": "Store in clean, dry airtight container.",
+      "country_of_origin": null,
+      "claims": [
+        "100% Whole Wheat",
+        "Rich in Dietary Fibre"
+      ]
+    }
+  },
+  "07_turmeric_powder.png": {
+    "title": "Golden Pure Turmeric Powder",
+    "category": "Spices & Condiments",
+    "ground_truth": {
+      "product_name": "Golden Pure Turmeric Powder",
+      "product_category": "Spices & Condiments",
+      "ingredients_list": [
+        "Dried Turmeric Rhizome"
+      ],
+      "allergen_declaration": null,
+      "net_quantity": "200 g",
+      "veg_nonveg_mark": "veg",
+      "fssai_licence_number": "10024022000555",
+      "manufacturer_details": "Spice Roots Ltd, Erode 638001, Tamil Nadu",
+      "batch_lot": null,
+      "manufacturing_date": "2024-08-15",
+      "expiry_date": null,
+      "best_before": "12 months from mfg",
+      "storage_instructions": "Store in an airtight jar in a cool dry place.",
+      "country_of_origin": null,
+      "claims": []
+    }
+  },
+  "08_packaged_water.png": {
+    "title": "Himalayan Springs Natural Mineral Water",
+    "category": "Packaged Water",
+    "ground_truth": {
+      "product_name": "Himalayan Springs Natural Mineral Water",
+      "product_category": "Packaged Water",
+      "ingredients_list": [
+        "Natural Mineral Water"
+      ],
+      "allergen_declaration": null,
+      "net_quantity": "1 L",
+      "veg_nonveg_mark": "veg",
+      "fssai_licence_number": "10022099000777",
+      "manufacturer_details": "Himalayan Waters Pvt Ltd, Solan 173212, HP",
+      "batch_lot": "HW-771",
+      "manufacturing_date": "2024-10-01",
+      "expiry_date": null,
+      "best_before": "6 months",
+      "storage_instructions": "Keep away from direct sunlight.",
+      "country_of_origin": null,
+      "claims": []
+    }
+  },
+  "09_dark_chocolate.png": {
+    "title": "Artisan 70% Dark Chocolate",
+    "category": "Confectionery - Chocolate",
+    "ground_truth": {
+      "product_name": "Artisan 70% Dark Chocolate",
+      "product_category": "Confectionery - Chocolate",
+      "ingredients_list": [
+        "Cocoa Mass",
+        "Cocoa Butter",
+        "Sugar",
+        "Emulsifier (INS 322i)",
+        "Vanilla"
+      ],
+      "allergen_declaration": "Contains: Soy. May contain Milk, Tree Nuts.",
+      "net_quantity": "80 g",
+      "veg_nonveg_mark": "veg",
+      "fssai_licence_number": "10026044000333",
+      "manufacturer_details": "Artisan Chocolates Ltd, Bangalore 560038",
+      "batch_lot": "DC-05",
+      "manufacturing_date": "2024-09-05",
+      "expiry_date": "2025-09-05",
+      "best_before": null,
+      "storage_instructions": "Store in a cool, dry place at 15-20\u00b0C.",
+      "country_of_origin": null,
+      "claims": [
+        "Rich in Cocoa"
+      ]
+    }
+  },
+  "10_herbal_tea_claims.png": {
+    "title": "AyurVida Wellness Herbal Infusion",
+    "category": "Beverages - Herbal Tea",
+    "ground_truth": {
+      "product_name": "AyurVida Wellness Herbal Infusion",
+      "product_category": "Beverages - Herbal Tea",
+      "ingredients_list": [
+        "Tulsi",
+        "Ginger",
+        "Cardamom",
+        "Clove",
+        "Cinnamon"
+      ],
+      "allergen_declaration": null,
+      "net_quantity": "50 g (25 Tea Bags)",
+      "veg_nonveg_mark": "veg",
+      "fssai_licence_number": "10017055000222",
+      "manufacturer_details": "AyurVida Natural Products, Dehradun 248001, UK",
+      "batch_lot": "AV-88",
+      "manufacturing_date": "2024-09-01",
+      "expiry_date": null,
+      "best_before": "24 months from mfg",
+      "storage_instructions": "Store in airtight container away from moisture.",
+      "country_of_origin": null,
+      "claims": [
+        "Cures diabetes naturally",
+        "Boosts immunity 100%"
+      ]
+    }
+  }
+}

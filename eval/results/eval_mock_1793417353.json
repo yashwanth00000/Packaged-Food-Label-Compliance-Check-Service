@@ -1,0 +1,68 @@
+{
+  "mode": "mock",
+  "accuracy": 1.0,
+  "correct": 3,
+  "total": 3,
+  "all_constraints_met": true,
+  "per_class": {
+    "CLEAR_FOR_PRINT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    "REVISE_AND_RECHECK": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    },
+    "REGULATORY_REVIEW": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0
+    }
+  },
+  "citation_validity_rate": 1.0,
+  "valid_citations": 6,
+  "total_citations": 6,
+  "results": [
+    {
+      "name": "compliant_biscuit",
+      "expected": "CLEAR_FOR_PRINT",
+      "actual": "CLEAR_FOR_PRINT",
+      "correct": true,
+      "constraints_met": true,
+      "findings_count": 0,
+      "processing_time": 0.06717991828918457,
+      "valid_citations": 0,
+      "total_citations": 0
+    },
+    {
+      "name": "missing_declarations",
+      "expected": "REVISE_AND_RECHECK",
+      "actual": "REVISE_AND_RECHECK",
+      "correct": true,
+      "constraints_met": true,
+      "findings_count": 11,
+      "processing_time": 0.0442812442779541,
+      "valid_citations": 2,
+      "total_citations": 2
+    },
+    {
+      "name": "prohibited_claims",
+      "expected": "REGULATORY_REVIEW",
+      "actual": "REGULATORY_REVIEW",
+      "correct": true,
+      "constraints_met": true,
+      "findings_count": 8,
+      "processing_time": 0.07716250419616699,
+      "valid_citations": 4,
+      "total_citations": 4
+    }
+  ]
+}
